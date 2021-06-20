@@ -7,6 +7,12 @@ class Customer
 end
 
 class Associate
-    def process_payment
+    def process_payment(price, card_minimum)
+        if price >= card_minimum
+            return [true, 'card processed']
+        end
+        if price < card_minimum
+            return [false, 'below card minimum']
+        end
     end
 end
